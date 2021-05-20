@@ -2,8 +2,10 @@ import scala.collection.immutable.ListMap
 
 object ExamenBigData {
 
-  def liste_double(): Unit ={
-    val Maliste = List(("ecommercemag.fr"," "),
+  //Definition de la methode "liste_double"
+  def liste_double(): Unit = {
+    val Maliste : List[(String, String)] = List(
+      ("ecommercemag.fr"," "),
       ("https://www.journalducm.com/contact/","Payant"),
       ("https://www.zatsaz.com/"," "),
       ("https://www.lerevenu.com/"," "),
@@ -15,12 +17,15 @@ object ExamenBigData {
       ("https://www.jesuisundev.com/article-invite/","invite"),
       ("https://www.numerama.com/"," ")
     )
-    val finalListe =  (ListMap(Maliste:_*).keys.toList.map(l => l.replace("https://www.","").split("/")(0) ) zip ListMap(Maliste:_*).values).toList
 
-    println(finalListe)
+    //creation du tableau final
+    val liste_final =  (ListMap(Maliste:_*).keys.toList.map(l => l.replace("https://www.","").split("/")(0) ) zip ListMap(Maliste:_*).values).toList
 
+    //afficharge du tableau final
+    liste_final.foreach(f => println(f._1 + " " + f._2))
 
   }
+
   def main (args : Array[String]): Unit = {
 
     val test : List[String] = List ("julien", "paul", "jean", "rac", "trec", "joel", "ed", "chris", "maurice")
@@ -31,7 +36,7 @@ object ExamenBigData {
 
   }
 
-  def mafonction (liste : List[String]) : List[String] ={
+  def mafonction (liste : List[String]) : List[String] = {
     val retour : List[String] = liste.filter(l => l.endsWith("n"))
     return retour
 
