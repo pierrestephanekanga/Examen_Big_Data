@@ -28,7 +28,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <scalaversion>2.11.8</scalaversion>
+                    <scalaVersion>2.11.8</scalaVersion>
                 </configuration>
             </plugin>
         </plugins>
